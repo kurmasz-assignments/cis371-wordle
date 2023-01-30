@@ -24,6 +24,11 @@ export default class WordleModel {
         console.log('In WordleModel#enterClicked')
     }
 
+    letterClicked(letter) {
+        console.log(`In WordleModel#enterClicked(${letter})`)
+        this.#keyStatus[letter] = 'clicked'
+    }
+
     status() {
         return this.#keyStatus
     } // end status

@@ -26,5 +26,15 @@ export default class WordleView {
     update(status) {
         console.log('WordleView#update updating the view based on the model\'s status.')
         console.log(status)
+
+        // Update the class list of any clicked letters
+        for (const letter in status) {
+            const box = document.getElementById(`key-${letter}`)      
+
+            // For now, box may be undefined because the demo view doesn't contain all the letters.
+            if (box) {
+                box.className = `letterkey ${status[letter]}`            
+            }
+        }       
     } // end update
 } // end class

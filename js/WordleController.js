@@ -14,11 +14,11 @@ export default class WordleController {
 
     enterClicked() {
         console.log('You clicked "Enter".')
-        this.model.enterClicked()
-        this.view.update(this.model.status())
     }
 
     letterClicked(letter) {
         console.log('You clicked on ' + letter)
+        this.model.letterClicked(letter)
+        this.view.update(this.model.status())
     }
 }
