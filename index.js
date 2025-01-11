@@ -32,6 +32,7 @@ const port = 3000
 app.set('view engine', 'ejs')
 
 app.use(express.static('js'))
+app.use(express.static('css'))
 
 /* If the route/path begins with "wordle", then look for an .ejs file of the same name */ 
 app.get(/^\/wordle(.*)$/, (req, res) => {
@@ -43,7 +44,7 @@ app.get(/^\/wordle(.*)$/, (req, res) => {
         maxAttempts = parseInt(req.query.maxAttempts)
     }
 
-    let qParams = {maxAttempts}
+    let qParams = {maxAttempts}   // short-cut for {maxAttempts: maxAttempts}
     if (req.query.answer !== undefined) {
         qParams.answer = req.query.answer
     } else if (req.query.guesses !== undefined) {

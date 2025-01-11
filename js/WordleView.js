@@ -9,7 +9,7 @@ export default class WordleView {
 
     onEnterClicked(callback) {
         let enter = document.getElementById('enterkey')
-        enter.addEventListener('click', () => callback())
+        enter.addEventListener('click', callback)
     }
 
     onLetterClicked(callback) {

@@ -14,7 +14,7 @@ export default class WordleModel {
         this.#maxAttempts = maxAttempts_in
 
         // One idea for keeping track of which letters are used.
-        this.#keyStatus = []
+        this.#keyStatus = {}
         'abcdefghijklmnopqrstuvwxyz'.split('').forEach((letter) => {
             this.#keyStatus[letter] = 'unused'
         })
